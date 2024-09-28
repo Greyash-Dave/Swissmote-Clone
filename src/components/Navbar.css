@@ -1,0 +1,65 @@
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(17, 16, 16);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.navbar-container.visible {
+    transform: translateY(0);
+}
+
+.navbar-container.hidden {
+    transform: translateY(-100%);
+}
+
+.navbar-container.glass-effect {
+    background-color: rgba(17, 16, 16, 0.167);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: #fff;
+    width: 1333px;
+    height: 110px;
+}
+
+.navbar-logo img {
+    height: 110px;
+}
+
+.navbar-links {
+    font-family: 'Syne', sans-serif;
+    font-size: 19.2px;
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+    color: rgb(192, 40, 45);
+}
+
+.hire-button {
+    background-color: rgb(192, 40, 45);
+    border: 0;
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    height: 56px;
+    width: 155px;
+    color: #fff;
+    cursor: pointer;
+}

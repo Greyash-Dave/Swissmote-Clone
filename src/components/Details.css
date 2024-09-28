@@ -1,0 +1,88 @@
+.details-howitworks {
+    max-width: 1477px;
+    max-height: 436px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(38, 38, 38);
+    padding: 5rem;
+}
+
+.details-elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1477px;
+    height: 436px;
+}
+
+.details-title {
+    display: flex;
+    font-size: 28px;
+    font-family: 'Clash Display', sans-serif;
+    width: 1333px;
+    height: 115px;
+    line-height: 48px;
+    justify-content: start;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.details-title.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.details-title h2 {
+    width: 348px;
+    height: 48px;
+}
+
+.horizontal-line {
+    margin-top: 2.5rem;
+    width: 90%;
+    height: 0.35rem;
+    background-color: black;
+}
+
+.details-howitworks-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 1333px;
+    height: 269px;
+}
+
+.details-howitworks-card {
+    width: 400px;
+    height: 267px;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.details-howitworks-card.animate {
+    animation: fadeInUp 0.3s ease-in-out forwards;
+}
+
+.details-howitworks-cards h3 {
+    font-size: 96px;
+    font-family: 'Satoshi', sans-serif;
+}
+
+.details-howitworks-cards p {
+    width: 400px;
+    height: 75px;
+    font-size: 17.6px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

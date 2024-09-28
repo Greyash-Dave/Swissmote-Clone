@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@200;400;600;800&display=swap');
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.hire-button {
+  position: relative;
+  background-color: rgb(192, 40, 45);
+  border: 0;
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  height: 56px;
+  width: 155px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  z-index: 999;
+}
+
+.hire-button::before, 
+.hire-button::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 56px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center the icons */
+}
+
+.hire-button::before {
+  background-image: url('/b-button.svg');
+  left: -9%; /* Position before element to the left of the button's border */
+}
+
+.hire-button::after {
+  background-image: url('/a-button.svg');
+  right: -19%; /* Position after element to the right of the button's border */
+}
+
+.arrow-icon{
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.hire-button:hover .arrow-icon{
+  transform: translate(10px);
+}
