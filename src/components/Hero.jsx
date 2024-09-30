@@ -3,6 +3,7 @@ import './Hero.css';
 
 const Hero = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [imageVisible, setImageVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,13 +13,16 @@ const Hero = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
+    // Set image to visible after a short delay to trigger the animation
+    const timer = setTimeout(() => setImageVisible(true), 100);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
     };
   }, []);
 
   const calculateOpacity = () => {
-    // Adjust these values to control when the fade effect starts and ends
     const fadeStart = 0;
     const fadeEnd = 300;
     const opacity = 1 - Math.min(Math.max((scrollPosition - fadeStart) / (fadeEnd - fadeStart), 0), 1);
@@ -28,8 +32,8 @@ const Hero = () => {
   const calculateLogoSize = () => {
     const shrinkStart = 0;
     const shrinkEnd = 300;
-    const maxSize = 100; // Maximum size of the logo in percentage
-    const minSize = 20; // Minimum size of the logo in percentage
+    const maxSize = 100;
+    const minSize = 20;
     const shrinkFactor = Math.max(minSize, maxSize - ((scrollPosition - shrinkStart) / (shrinkEnd - shrinkStart)) * (maxSize - minSize));
     return `${shrinkFactor}%`;
   };
@@ -52,7 +56,7 @@ const Hero = () => {
             <img src="/arrow.svg" alt="arrow" className="arrow-icon" />
           </button>
         </div>
-        <div className="hero-image">
+        <div className={`hero-image ${imageVisible ? 'visible' : ''}`}>
           <img src='/hero-img.webp' alt="Hero" />
         </div>
       </div>

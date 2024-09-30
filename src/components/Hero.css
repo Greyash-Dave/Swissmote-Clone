@@ -1,6 +1,5 @@
-.hero-container{
+.hero-container {
     max-width: 1477px;
-    max-height: 626px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,16 +8,16 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
-    margin-top: 110px;
+    padding-top: 110px;
 }
 
-.hero-elements{
+.hero-elements {
     width: 1333px;
     height: 460px;
     display: flex;
 }
 
-.hero-title{
+.hero-title {
     font-family: 'Clash Display', sans-serif;
     width: 740px;
     height: 450px;
@@ -27,14 +26,14 @@
     gap: 1.5rem;
 }
 
-.hero-title h1{
+.hero-title h1 {
     font-size: 57.6px;
     width: 352px;
     height: 115px;
     line-height: 57.6px;
 }
 
-.hero-title h2{
+.hero-title h2 {
     font-size: 57.6px;
     color: rgb(192, 40, 45);
     width: 740px;
@@ -42,27 +41,35 @@
     line-height: 57.6px;
 }
 
-.hero-title p{
+.hero-title p {
     width: 612px;
     height: 50px;
 }
 
-.hero-image{
+.hero-image {
     width: 592px;
     height: 474px;
+    transform: translateX(25%);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
-.hero-image img{
+.hero-image.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hero-image img {
     width: 100%;
     height: 100%;
     transform: translateY(-100px);
 }
 
-.hire-button{
+.hire-button {
     margin-left: 20px;
 }
 
-.swissmote_hero{
+.swissmote_hero {
     width: 100%;
     height: 50%;
 }
@@ -76,12 +83,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80%; /* Adjust this value to set the maximum width of the logo */
-    max-height: 80vh; /* Adjust this value to set the maximum height of the logo */
-  }
-  
-  .logo-container img {
+    max-width: 80%;
+    max-height: 80vh;
+}
+
+.logo-container img {
     min-width: 150%;
     height: auto;
-    /* object-fit: contain; */
-  }
+}
