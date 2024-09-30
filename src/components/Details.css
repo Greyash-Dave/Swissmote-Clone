@@ -8,6 +8,101 @@
     padding: 5rem;
 }
 
+.details-imagine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details-imagine h1{
+    font-size: 96px;
+    margin: 2rem;
+    font-family: 'Clash Display', sans-serif;
+}
+
+.details-imagine .card-container {
+    display: flex;
+    align-items: center;
+    width: 100%;   
+    gap: 2rem; 
+}
+
+.details-imagine .card-container .card {
+    background-color: rgb(0, 0, 0);
+    width: 491px;
+    height: 271px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details-imagine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Ensure the animation doesn't overflow the container */
+  }
+  
+  .details-imagine h1 {
+    font-size: 96px;
+    margin: 2rem;
+    font-family: 'Clash Display', sans-serif;
+  }
+  
+  .card-container {
+    display: flex;
+    width: 100%;
+    animation: scrollCards 10s linear infinite; /* Animation for infinite scrolling */
+  }
+  
+  .card {
+    background-color: rgb(0, 0, 0);
+    width: 491px;
+    height: 271px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+    flex-shrink: 0; /* Ensure the cards don't shrink when space is limited */
+    border-radius: 1rem 0 1rem 0;
+  }
+  
+  .card-text {
+    font-size: 18px;
+    margin: 1rem;
+  }
+  
+  .card-sub {
+    font-size: 80px;
+    font-family: 'Clash Display', sans-serif;
+    margin: 0.5rem;
+    color: #c0282d;
+  }
+  
+  @keyframes scrollCards {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-110%); /* Move to the left */
+    }
+  }
+  
+
+.details-imagine .card-container .card .card-text{
+    font-size: 18px;
+    margin: 1rem;
+}
+
+.details-imagine .card-container .card .card-sub{
+    font-size: 80px;
+    font-family: 'Clash Display', sans-serif;
+    margin: 0.5rem;
+    color: #c0282d;
+}
+
+
 .details-elements {
     display: flex;
     flex-direction: column;

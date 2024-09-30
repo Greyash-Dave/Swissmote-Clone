@@ -49,7 +49,35 @@ const Details = () => {
     { num: 3, text: "We send you the best candidates for final approval and then get the contracts signed so your company can flourish!" },
   ];
 
+  const cardData2 = [
+    { text: "Your team comprises the top 1% of global talent, driving exceptional results.", sub:"Top 1%" },
+    { text: "Recruiting costs are reduced by 90% , driving exceptional results.", sub:"90%" },
+    { text: "Your team grows rapidly, empowering you to secure the #1 spot in your industry.", sub:"#1 position" },
+    { text: "Your team comprises the top 1% of global talent, driving exceptional results.", sub:"Top 1%" },
+    { text: "Recruiting costs are reduced by 90% , driving exceptional results.", sub:"90%" },
+    { text: "Your team grows rapidly, empowering you to secure the #1 spot in your industry.", sub:"#1 position" },
+  ];
+
   return (
+
+    <>
+    <div className="details-imagine">
+      <h1>Imagine...</h1>
+      <div className="card-container">
+        {cardData2.map((card, index) => (
+            <div
+              key={card.num}
+              ref={(el) => (cardsRef.current[index] = el)}
+              data-index={index}
+              className={`card ${visibleCards.includes(index.toString()) ? 'animate' : ''}`}
+              style={{ animationDelay: `${index * 0.5}s` }}
+            >
+              <div className="card-text">{card.text}</div>
+              <div className="card-sub">{card.sub}</div>
+            </div>
+          ))}
+      </div>
+    </div>
     <div className="details-howitworks">
       <div className="details-elements">
         <div className={`details-title ${isTitleVisible ? 'animate' : ''}`} ref={titleRef}>
@@ -73,6 +101,7 @@ const Details = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
